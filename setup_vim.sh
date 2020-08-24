@@ -116,6 +116,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
 "syntax
+Plugin 'frazrepo/vim-rainbow'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'keith/swift.vim'
@@ -144,6 +145,19 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Pluginin settings --------------------------------------------------------- {{{
+" Rainbow {{{
+let g:rainbow_active = 1
+
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+" }}}
 " vue {{{
 au BufRead,BufNewFile *.vue set filetype=vue.html
 " }}}
