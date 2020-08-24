@@ -165,6 +165,14 @@ let g:ackprg = 'ag --vimgrep'
 " syntastic {{{
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm']
+" syntastic terraform
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " }}}
 " Python jedi {{{
 let g:jedi#popup_on_dot = 0
